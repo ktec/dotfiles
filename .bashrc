@@ -46,7 +46,7 @@ export PATH="$PATH:/opt/pkg/bin"
 $HOME/.asdf/completions/asdf.bash
 
 # brew install bash-completion
-source $(brew --prefix)/etc/bash_completion
+[ -x bash ] && source $(brew --prefix)/etc/bash_completion
 source ~/.git-completion.bash
 
 
@@ -102,4 +102,3 @@ export PS1="\[$txtcyn\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\] "
 
 # tabtab source for yarn package
 # uninstall by removing these lines or running `tabtab uninstall yarn`
-
