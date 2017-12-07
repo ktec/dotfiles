@@ -10,6 +10,7 @@
       "tree-view-filter"
       "hide-tree"
       "linter-clang"
+      "arduino-upload"
     ]
     telemetryConsent: "no"
   editor:

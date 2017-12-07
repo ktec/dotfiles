@@ -18,7 +18,6 @@ alias mkdir='mkdir -p'
 alias h='history'
 alias j='jobs -l'
 alias which='type -a'
-alias ..='cd ..'
 
 # Copy output of last command to clipboard
 alias cl="fc -e -|pbcopy"
@@ -37,8 +36,8 @@ alias libpath='echo -e ${LD_LIBRARY_PATH//:/\\n}'
 alias du='du -kh'    # Makes a more readable output.
 alias df='df -kTh'
 
-alias ..='cd ../'
-alias ...='cd ../../'
+alias ..='cd ..'
+alias ...='cd ../..'
 alias c='clear'
 alias vi=vim
 alias em='open -a Emacs.app'
