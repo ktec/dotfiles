@@ -33,6 +33,7 @@ PATH="$PATH:$HOME/.gems/ruby/2.3.1/bin"
 
 PATH="$PATH:/usr/local/heroku/bin" ### Added by the Heroku Toolbelt
 PATH="$PATH:/usr/local/share/npm/bin" # Make Grunt cli work!???
+PATH="$PATH:/usr/local/opt/qt/bin" # Support QT
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
@@ -41,8 +42,20 @@ PATH="$PATH:/usr/bin:/bin:/usr/sbin:/sbin"
 PATH="$PATH:/opt/X11/bin"
 PATH="$PATH:/opt/pkg/sbin"
 PATH="$PATH:/opt/pkg/bin"
+PATH="$PATH:/usr/local/opt/berkeley-db@4/bin"
+
+PATH="$PATH:/Users/keith/.mos/bin"
 
 export PATH
+
+# Other QT compiler vars
+# LDFLAGS:  -L/usr/local/opt/qt/lib
+# CPPFLAGS: -I/usr/local/opt/qt/include
+# For compilers to find this software you may need to set:
+# LDFLAGS:  -L/usr/local/opt/berkeley-db@4/lib
+# CPPFLAGS: -I/usr/local/opt/berkeley-db@4/include
+
+
 
 # asdf provides multiple versions of elixir...
 $HOME/.asdf/asdf.sh
@@ -112,4 +125,5 @@ export PS1="\w \[$txtcyn\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\]▸ "
 
 # tabtab source for yarn package
 # uninstall by removing these lines or running `tabtab uninstall yarn`
-PATH="$PATH:/Users/keith/.mos/bin"
+
+export HOSTALIASES=~/.hosts
