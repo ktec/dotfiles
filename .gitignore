@@ -9,6 +9,8 @@
 !.bash_profile
 !.bashrc
 !.cabal/config # haskell config
+!.i3
+!.i3/*
 !.chruby
 !.colours
 !.commitmessage
