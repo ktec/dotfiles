@@ -117,3 +117,11 @@ export PS1="\w \[$txtcyn\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\]▸ "
 
 # tabtab source for yarn package
 # uninstall by removing these lines or running `tabtab uninstall yarn`
+
+#============================================================
+#
+#  SSH
+#
+#============================================================
+eval $(ssh-agent)
+ssh-add ~/.ssh/id_ed25519
