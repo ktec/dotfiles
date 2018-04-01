@@ -64,8 +64,12 @@ $HOME/.asdf/completions/asdf.bash
 
 # brew install bash-completion
 case "$OSTYPE" in
-  darwin*) source $(brew --prefix)/etc/bash_completion  ;;
-  linux*)   echo "LINUX" ;;
+  darwin*)
+    source $(brew --prefix)/etc/bash_completion
+    ;;
+  linux*)
+    # here we can install linux only tools
+    ;;
 esac
 source ~/.git-completion.bash
 
