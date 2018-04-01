@@ -44,7 +44,8 @@ PATH="$PATH:/opt/pkg/sbin"
 PATH="$PATH:/opt/pkg/bin"
 PATH="$PATH:/usr/local/opt/berkeley-db@4/bin"
 
-PATH="$PATH:/Users/keith/.mos/bin"
+PATH="$PATH:.mos/bin"
+PATH="$PATH:.local/bin"
 
 export PATH
 
