@@ -50,6 +50,7 @@
 	sh = show --color-words='[^[:space:]]'
 	pend = cherry -v origin/master
 	psuh = push
+	h = help
 
 [format]
 	# pretty = %C(yellow)%h%Creset %C(magenta)%cd%Creset %d %s
