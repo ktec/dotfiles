@@ -26,6 +26,9 @@ xbindkeys &
 
 autocutsel &
 
+# Start removable media task tray
+udiskie &
+
 # Setup keyboard layout
 setxkbmap -model pc104 -layout gb
 
