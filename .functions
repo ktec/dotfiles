@@ -31,3 +31,18 @@ find_git_branch() {
   fi
 }
 
+
+elixir_test() {
+  if [[ $# -eq 0 ]] ; then
+    find . -name '*.ex' -o \
+           -name '*.exs' -o \
+           -name '*.eex' | \
+           entr mix test
+  else
+    find . -name '*.ex' -o \
+           -name '*.exs' -o \
+           -name '*.eex' | \
+           entr mix test --include $1 --exclude test
+  fi
+}
+
