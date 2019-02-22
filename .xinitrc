@@ -26,6 +26,9 @@ xbindkeys &
 
 autocutsel &
 
+# Setup keyboard layout
+setxkbmap -model pc104 -layout gb
+
 # Finally start i3wm
 exec i3
 # If you need to debug i3, uncomment this:
