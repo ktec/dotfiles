@@ -69,7 +69,7 @@ pathmunge () {
 
 pathmunge $HOME/.local/bin
 # For elixir development
-pathmunge $HOME/code/elixir/elixir/bin
+# pathmunge $HOME/code/elixir/elixir/bin
 # Add all local bin
 #pathmunge .bin
 
