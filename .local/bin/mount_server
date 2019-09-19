@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# sshfs keith@nas: /home/keith/server
+# sshfs nas: ~/server/home
+# sshfs nas:/share/Video ~/server/video
+# sshfs -o allow_other nas:/share/Video ~/server/video -o uid=1000 -o gid=1000 -o sshfs_debug
+# sshfs -o allow_other nas:/share/Audio ~/server/audio -o uid=1000 -o gid=1000 -o sshfs_debug
+# [ -e ~/server/$@ ] || mkdir ~/server/$@
+
+
+BASE=~/server
+
+if [ -z "$1" ]; then
+    echo "Usage: `basename $0` sharename"
+    exit 85
+fi
+
+LOCAL_PATH="$(echo $BASE/$1 | tr '[:upper:]' '[:lower:]'  )"
+
+[[ -e  $LOCAL_PATH ]] || mkdir $LOCAL_PATH
+
+sshfs -o follow_symlinks nas:/share/$1/ $LOCAL_PATH
+
