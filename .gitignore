@@ -1,6 +1,15 @@
 # Blacklist files/folders in the same directory as .gitignore
 /*
 
+# There is a trick here to include child directories but not all children:
+#
+# First we dont ignore the directory
+# !.thing
+# Next we ignore all children of the directory
+# .thing
+# Finally we dont ignore the child directory
+# !.thing/wewantthis
+
 # Except these...
 !.Xresources
 !.aliases
@@ -34,6 +43,9 @@
 !.gitignore_global
 !.gtkrc-2.0.mine
 !.inputrc
+!.local
+.local/*
+!.local/bin/
 !.pryrc
 !.railsrc
 !.tmux.conf
