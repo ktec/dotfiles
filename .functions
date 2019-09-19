@@ -42,7 +42,6 @@ elixir_test() {
     find . -name '*.ex' -o \
            -name '*.exs' -o \
            -name '*.eex' | \
-           entr mix test --include $1 --exclude test
+           entr mix test $@
   fi
 }
-
