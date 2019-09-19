@@ -115,5 +115,5 @@ URxvt*scrollBar: false
 *.color14:      #8abeb7
 
 ! white
-*.color7:       #707880
+*.color7:       #F0C808
 *.color15:      #c5c8c6

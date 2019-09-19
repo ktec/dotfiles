@@ -39,10 +39,16 @@ save_cwd() {
   pwd > ${HOME}/.cwd
 }
 
+RESET="\[\033[0m\]"
+RED="\[\033[0;31m\]"
+GREEN="\[\033[01;32m\]"
+BLUE="\[\033[01;34m\]"
+YELLOW="\[\033[0;33m\]"
 
 # PROMPT
 PROMPT_COMMAND="find_git_branch; clean_history; save_cwd;"
-export PS1="[\u@\h \W\$git_branch]$ "
+
+export PS1="${GREEN}\u@\h${RESET}:${BLUE}\w${RESET} ${YELLOW}\$git_branch${RESET}\n$ "
 
 # Change to saved working dir
 [[ -f "${HOME}/.cwd" ]] && cd "$(< ${HOME}/.cwd)"
@@ -72,6 +78,10 @@ pathmunge $HOME/.local/bin
 # pathmunge $HOME/code/elixir/elixir/bin
 # Add all local bin
 #pathmunge .bin
+pathmunge $HOME/.cargo/bin/
+pathmunge $HOME/.cache/rebar3/bin
+
+source ~/.asdf/installs/rust/1.33.0/env
 
 # SSH
 # Keychain - not sure this is the best approach...
