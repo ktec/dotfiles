@@ -102,3 +102,11 @@ export KERL_BUILD_DOCS=yes
 
 # Enable delete in Atom editor
 export ELECTRON_TRASH=gio
+
+# Start ssh-agent automatically and ensure only one process
+if ! pgrep -u "$USER" ssh-agent > /dev/null; then
+    ssh-agent > ~/.ssh-agent-lock
+fi
+if [[ ! "$SSH_AUTH_SOCK" ]]; then
+    eval "$(<~/.ssh-agent-lock)"
+fi
