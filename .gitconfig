@@ -50,6 +50,8 @@
 	sh = show --color-words='[^[:space:]]'
 	pend = cherry -v origin/master
 	psuh = push
+	lastcommit = rev-parse HEAD
+	last = rev-parse HEAD
   # commit_with_t = commit --author 'Tanya <tanechka289@gmail.com'
 
 [format]

@@ -8,3 +8,4 @@ vendor/ruby
 *.crt
 .tool-versions
 phx_new*.ez
+.elixir_ls
