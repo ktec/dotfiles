@@ -9,3 +9,4 @@ vendor/ruby
 .tool-versions
 phx_new*.ez
 .elixir_ls
+.vscode
