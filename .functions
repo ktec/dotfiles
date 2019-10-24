@@ -45,3 +45,8 @@ elixir_test() {
            entr mix test $@
   fi
 }
+
+set_window_title() {
+    printf -v title '%s' "$*"
+    trap 'echo -ne "\e]0;${title}\007"' DEBUG
+}
