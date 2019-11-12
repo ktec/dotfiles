@@ -93,6 +93,11 @@ eval `keychain --eval --nogui --noask -q --agents ssh id_*`
 #     eval $(ssh-agent)
 #     ssh-add
 # fi
+# Change the window title of X terminals
+# if [[ $TERM =~ "xterm|*rxvt*" ]]; then
+#   # set -o functrace
+#   trap 'set_title' DEBUG
+# fi
 
 # add GPG key to bash profile
 export GPG_TTY=$(tty)
