@@ -6,6 +6,7 @@
 #
 #============================================================
 
+alias ....='cd ../../../'
 alias ...='cd ../../'
 alias ..='cd ../'
 alias be='bundle exec '
@@ -34,6 +35,7 @@ alias ta='tmux attach -t'
 alias tm='tm'
 alias ts='tmux ls'
 alias vi=vim
+alias a=atom
 alias which='type -a'
 # http://www.commandlinefu.com/commands/view/3555/find-duplicate-files-based-on-size-first-then-md5-hash
 alias watch_elixir="find . -name '*.ex' -o -name '*.exs' | entr mix test"
@@ -68,6 +70,7 @@ alias g='git'
 alias a='git add'
 alias s='git status'
 alias d='git diff'
+alias gco='git chechout'
 alias gds='git diff --stat origin/master..HEAD'
 alias gac='git add . && git commit'
 alias gbd="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative master.."
