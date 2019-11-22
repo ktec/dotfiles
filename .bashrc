@@ -80,6 +80,7 @@ pathmunge $HOME/.local/bin
 #pathmunge .bin
 pathmunge $HOME/.cargo/bin/
 pathmunge $HOME/.cache/rebar3/bin
+pathmunge $HOME/.asdf/installs/elixir/1.9/.mix/escripts
 
 source ~/.asdf/installs/rust/1.33.0/env
 
