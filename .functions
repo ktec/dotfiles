@@ -34,15 +34,25 @@ find_git_branch() {
 
 elixir_test() {
   if [[ $# -eq 0 ]] ; then
-    find . -name '*.ex' -o \
-           -name '*.exs' -o \
-           -name '*.eex' | \
-           entr mix test
+    find . \
+        -not \( -path "./deps/*" -prune \) \
+        -not \( -path "./.git/*" -prune \) \
+        -not \( -path "./.elixir_ls/*" -prune \) \
+        -not \( -path "./docker/*" -prune \) \
+        -name '*.ex' -o \
+        -name '*.exs' -o \
+        -name '*.eex' | \
+        entr mix test
   else
-    find . -name '*.ex' -o \
-           -name '*.exs' -o \
-           -name '*.eex' | \
-           entr mix test $@
+    find . \
+        -not \( -path "./deps/*" -prune \) \
+        -not \( -path "./.git/*" -prune \) \
+        -not \( -path "./.elixir_ls/*" -prune \) \
+        -not \( -path "./docker/*" -prune \) \
+        -name '*.ex' -o \
+        -name '*.exs' -o \
+        -name '*.eex' | \
+        entr mix test $@
   fi
 }
 

@@ -30,7 +30,12 @@ autocutsel &
 udiskie &
 
 # Setup keyboard layout
-setxkbmap -model pc104 -layout gb
+
+# Extended keyboard
+# setxkbmap -model pc104 -layout gb
+
+# Mac Laptop keyboard
+setxkbmap -layout gb
 
 # Finally start i3wm
 exec i3

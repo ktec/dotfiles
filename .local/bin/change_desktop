@@ -1,8 +1,10 @@
 #!/bin/bash
 
-SOURCE=`find /usr/share/wallpapers/ -type f | shuf -n1`
+# SOURCE=`find /usr/share/wallpapers/ -type f | shuf -n1`
+# SOURCE=`find ~/Pictures/ -type f -name *.jpg | shuf -n1`
+SOURCE=`find ~/Pictures/Wallpapers -type f -name *.jpg | shuf -n1`
 LINK=~/.local/share/wallpaper.jpg
 
 [[ -L $LINK ]] && rm -f "$LINK"
 ln -s "$SOURCE" "$LINK"
-feh --bg-scale "$LINK"
+feh --bg-max --auto-rotate "$LINK"

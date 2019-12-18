@@ -1,0 +1,74 @@
+#!/usr/bin/env sh
+# Give a battery name (e.g. BAT0) as an argument.
+
+case $BLOCK_BUTTON in
+    3) pgrep -x dunst >/dev/null && notify-send "🔋 Battery module" "🔋: discharging
+🛑: not charging
+♻: stagnant charge
+🔌: charging
+⚡: charged
+❗: battery very low!
+- Text color reflects charge left" ;;
+esac
+
+capacity=$(cat /sys/class/power_supply/"$1"/capacity) || exit
+status=$(cat /sys/class/power_supply/"$1"/status)
+
+text=$(acpi -b)
+# while read -r line; do declare  "$line"; done </sys/class/power_supply/"$1"/uevent
+#
+# # echo $POWER_SUPPLY_NAME
+# # echo $POWER_SUPPLY_STATUS
+# # echo $POWER_SUPPLY_PRESENT
+# # echo $POWER_SUPPLY_TECHNOLOGY
+# # echo $POWER_SUPPLY_CYCLE_COUNT
+# # echo $POWER_SUPPLY_VOLTAGE_MIN_DESIGN
+# # echo $POWER_SUPPLY_VOLTAGE_NOW
+# # echo $POWER_SUPPLY_CURRENT_NOW
+# # echo $POWER_SUPPLY_CURRENT_AVG
+# # echo $POWER_SUPPLY_CAPACITY
+# # echo $POWER_SUPPLY_CHARGE_FULL_DESIGN
+# # echo $POWER_SUPPLY_CHARGE_FULL
+# # echo $POWER_SUPPLY_CHARGE_NOW
+# # echo $POWER_SUPPLY_TEMP
+# # echo $POWER_SUPPLY_MODEL_NAME
+# # echo $POWER_SUPPLY_MANUFACTURER
+#
+# # TIME_TILL_CHARGED=$((($POWER_SUPPLY_CHARGE_FULL - $POWER_SUPPLY_CHARGE_NOW) / $POWER_SUPPLY_CURRENT_NOW))
+# LEFT_TO_CHARGE=$(($POWER_SUPPLY_CHARGE_FULL - $POWER_SUPPLY_CHARGE_NOW))
+#
+# if (( $POWER_SUPPLY_CURRENT_NOW > 0 )); then
+#   TIME_TILL_CHARGED="$(($LEFT_TO_CHARGE / $POWER_SUPPLY_CURRENT_NOW))hrs"
+# else
+#   TIME_TILL_CHARGED=""
+# fi
+#
+# TIME_REMAINING=$(($POWER_SUPPLY_CHARGE_NOW * 1000 / $POWER_SUPPLY_CURRENT_NOW * 1000))
+
+
+if [ "$capacity" -ge 75 ]; then
+	color="#00ff00"
+elif [ "$capacity" -ge 50 ]; then
+	color="#ffffff"
+elif [ "$capacity" -ge 25 ]; then
+	color="#ffff00"
+else
+	color="#ff0000"
+	warn="❗"
+fi
+
+[ -z $warn ] && warn=" "
+
+[ "$status" = "Charging" ] && color="#ffffff"
+
+# print text
+# text=$(
+# # printf "%s%s%s\n" "$(echo "$status" | sed -e "    s/,//;    s/Discharging/🔋/;    s/Not Charging/🛑/;    s/Charging/🔌/;    s/Unknown/♻️/;    s/Full/⚡/;    s/ 0*/ /g;    s/ :/ /g")" "$warn" "$(echo "$capacity" | sed -e 's/$/%/')"
+# # printf "%s hrs: %s: %s%s%s\n" "$TIME_TILL_CHARGED" "$POWER_SUPPLY_NAME" "$(echo "$status" | sed -e "    s/,//;    s/Discharging/Dis/;    s/Not Charging/Not/;    s/Charging/Chr/;    s/Unknown/Ukn♻️/;    s/Full/Full⚡/;    s/ 0*/ /g;    s/ :/ /g")" "$warn" "$(echo "$capacity" | sed -e 's/$/%/')"
+#
+# printf "%sµA / %smA (%s)\n" "$LEFT_TO_CHARGE" $(($POWER_SUPPLY_CURRENT_NOW/1000)) $TIME_REMAINING
+# )
+
+echo $text;
+echo $text;
+echo $color;

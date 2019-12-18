@@ -1,11 +1,8 @@
 !-- Xft settings !
 !-- Using `xdpyinfo | grep -B 2 resolution` u can find res for ur monitor
 !Xft*dpi: 220
-Xft*dpi: 220
+Xft*dpi: 160
 Xft*antialias: true
-/* Xft*rgba: rgb */
-/* Xft*hinting:                full */
-/* Xft*hintstyle:  hintfull */
 Xft*hinting: true
 Xft*hintstyle: hintslight
 Xft*autohint: false
@@ -14,20 +11,21 @@ Xft*lcdfilter: lcddefault
 !-- Common settings !
 
 ! special
-*.foreground:   #dcdcdc
+*.foreground:   #c5c8c6
 *.background:   #1d1f21
 *.cursorColor:  #c5c8c6
 
 ! black
-*.color2:       #8c9440
 *.color0:       #282a2e
-*.color8:       #373b41
+!*.color8:      #373b41
+*.color8:       #707880
 
 ! red
 *.color1:       #a54242
 *.color9:       #cc6666
 
 ! green
+*.color2:       #8c9440
 *.color10:      #b5bd68
 
 ! yellow
@@ -47,48 +45,42 @@ Xft*lcdfilter: lcddefault
 *.color14:      #8abeb7
 
 ! white
-*.color7:       #F0C808
+*.color7:       #707880
 *.color15:      #c5c8c6
+
 
 !-- Xterm settings !
 
-Xterm*font: *-Terminus-*-*-*-27-*,xft:Font Awesome 5 Free:size=8
+Xterm*font: *-Terminus-*-*-*-27-*,xft:Font Awesome 5 Free:size=12
 XTerm*utf8: 2
-/* XTerm*saveLines:            32767 */
+XTerm*saveLines:            32767
 
 !-- URxvt settings !
 
-urxvt*background:    rgba:0000/0000/0000/cccc
-URxvt.transparent:   true
-URxvt.shading:       20
-! pixels for external border
-URxvt*externalBorder:     0
-! pixels for internal border
-URxvt*internalBorder:     1
-! remove border
-URxvt*borderLess:         false
-/* URxvt*depth: 32 */
-/* URxvt*iconFile:             /usr/share/icons/elementary/apps/24/terminal.svg */
-/* URxvt*colorUL:              #AED210 */
-/* URxvt*keysym.M-u:           perl:url-select:select_next */
-/* URxvt*url-select.launcher:  /usr/bin/firefox -new-tab */
-/* URxvt*url-select.underline: true */
+urxvt*background:           rgba:0000/0000/0000/cccc
+URxvt*transparent:          true
+URxvt*shading:              20
+URxvt*depth:                32
+URxvt*externalBorder:       0
+URxvt*internalBorder:       1
+URxvt*borderLess:           false
+!URxvt*url-select.launcher:  /usr/bin/slimjet-browser -new-tab
+!URxvt*url-select.underline: true
 
 /* URxvt*keysym.C-M-c:     perl:clipboard:copy; */
 /* URxvt*keysym.C-M-v:     perl:clipboard:paste; */
 URxvt*keysym.Control-Meta-V: eval:paste_clipboard
 URxvt*keysym.Control-Meta-C: eval:selection_to_clipboard
-URxvt*font: xft:Dejavu Sans Mono:size=8,xft:Font Awesome 5 Free:size=8,xft:Inconsolata\ for\ Powerline:pixelsize=22
+URxvt*font: xft:Dejavu Sans Mono:size=9,xft:Font Awesome 5 Free:size=8,xft:Inconsolata\ for\ Powerline:pixelsize=22
 URxvt*letterSpace: -1
 URxvt*saveLines: 1000000
 
 !-- Perl extensions !
-!URxvt.perl-ext-common: default,clipboard,matcher,tabbed,font-size,url-select,keyboard-select
-URxvt.perl-ext-common: default,clipboard,matcher,font-size,url-select,keyboard-select
-URxvt.url-launcher: /usr/bin/xdg-open
-URxvt.url-select.launcher:	/usr/bin/flashpeak-slimjet
-URxvt.url-select.underline: true
-URxvt.matcher.button: 1
+URxvt*perl-ext-common: default,clipboard,matcher,font-size,url-select,keyboard-select
+URxvt*url-launcher: /usr/bin/xdg-open
+URxvt*url-select.launcher:	/usr/bin/slimjet-browser
+URxvt*url-select.underline: true
+URxvt*matcher.button: 1
 
 !-- Change background/foreground colours !
 URxvt*keysym.C-7: command:\033]11;#ffffff\007\033]10;black\007
@@ -120,20 +112,14 @@ URxvt*iso14755_52: false
 
 ! enable scrollbar
 URxvt*scrollBar:          true
-! scrollbar width
 URxvt*thickness:          5
-! scrollbar color
 URxvt*scrollColor:        #1E1E1E
-! scrollbar trough area color
 !URxvt*troughColor:        #333333
 ! scrollbar without a trough
 !URxvt*scrollBar_floating: false
-! scrollbar to the right
 URxvt*scrollBar_right:    true
-! scrollbar style
 URxvt*scrollstyle:        plain
 
 URxvt*scrollTtyOutput:      false
 URxvt*scrollWithBuffer:     true
 URxvt*scrollTtyKeypress:    true
-

@@ -1,0 +1,13 @@
+#!/usr/bin/env sh
+
+CORE=${CORE:-0}
+
+case $BLOCK_BUTTON in
+	1) notify-send "🖥 CPU hogs" "$(ps axch -o cmd:15,%cpu --sort=-%cpu | head)" ;;
+	3) notify-send "🖥 CPU module " "\- Shows CPU temperature.
+- Click to show intensive processes.
+- % is of single core." ;;
+esac
+
+# sensors | awk -v core="Core $CORE" '$0 ~ core {print $3}'
+sensors | awk 'BEGIN {ORS=" "}; END {print "\n"}; /Core/ {print $3}'

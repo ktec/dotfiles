@@ -1,0 +1,23 @@
+# !/usr/bin/env sh
+
+# icon=${icon:-" "}
+
+case $button in
+	1) # Left click
+  i3-msg -q exec vlc http://nas:8000
+  ;;
+  *) # No click
+esac
+
+
+printf '
+  {
+    "full_text":"🎵%s",
+    "short_text":"🎵%s",
+    "color": "#c5c8c6",
+    "background": "#2d2d2d",
+    "_playing":"%s"
+  }
+' $_playing $_playing $_playing
+
+exit 0

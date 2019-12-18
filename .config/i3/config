@@ -11,7 +11,6 @@
 
 set $mod Mod4
 
-
 # Colours
 set $bg_colour              #2f343f
 set $active_bg_colour       #3f444f
@@ -34,7 +33,8 @@ set $urgent_bg_colour       #E53935
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8, pango:Font Awesome 5 Free 8
-font pango:DejaVu Sans Mono 8
+# font pango:DejaVu Sans Mono 8, Font Awesome, Ionicons, 10
+font pango:DejaVu Sans Mono, FontAwesome 9
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -184,7 +184,6 @@ for_window [class="^.*"] border pixel 2
 gaps inner 0
 gaps outer 0
 
-
 # Additionally, you can issue commands with the following syntax. This
 #is useful to bind keys to changing the gap size.
 # gaps inner|outer current|all set|plus|minus <px>
@@ -208,8 +207,6 @@ smart_borders on
 set $mode_gaps Gaps: (o) outer, (i) inner
 set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
 set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
-
-
 
 mode "$mode_gaps" {
     bindsym o      mode "$mode_gaps_outer"
@@ -263,10 +260,30 @@ client.urgent               $urgent_bg_colour       $urgent_bg_colour       $tex
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-    font pango:DejaVu Sans 7,Font Awesome 5 Free 7
-    position bottom
+    # font pango:DejaVu Sans Mono, FontAwesome 9
+    position top
     status_command i3status
+#   status_command 2>/tmp/i3blocks.err i3blocks -vvv -c ~/.config/i3blocks/config | tee /tmp/i3blocks.out
 }
+
+bar {
+    # font pango:DejaVu Sans Mono, FontAwesome 9
+    position bottom
+    status_command i3blocks
+    # status_command 2>/tmp/i3blocks.err i3blocks -vvv -c ~/.config/i3blocks/config | tee /tmp/i3blocks.out
+
+    colors {
+      # separator #515151
+      background #2d2d2d
+      statusline #cccccc
+      # focused_workspace #99cc99 #99cc99 #000000
+      # active_workspace #333333 #333333 #99cc99
+      # inactive_workspace #2d2d2d #2d2d2d #999999
+      # urgent_workspace #f2777a #f2777a #ffffff
+    }
+}
+
+
 
 bindsym $mod+shift+x exec i3lock --color "$bg_color"
 

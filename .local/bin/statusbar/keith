@@ -1,0 +1,150 @@
+# !/usr/bin/env sh
+
+# foreground="#c5c8c6"
+# background="#1d1f21"
+
+# ! black
+# *.color0:       #282a2e
+# *.color8:       #373b41
+#
+# ! red
+# *.color1:       #a54242
+# *.color9:       #cc6666
+#
+# ! green
+# *.color2:       #8c9440
+# *.color10:      #b5bd68
+#
+# ! yellow
+# *.color3:       #de935f
+# *.color11:      #f0c674
+#
+# ! blue
+# *.color4:       #5f819d
+# *.color12:      #81a2be
+#
+# ! magenta
+# *.color5:       #85678f
+# *.color13:      #b294bb
+#
+# ! cyan
+# *.color6:       #5e8d87
+# *.color14:      #8abeb7
+#
+# ! white
+# *.color7:       #707880
+# *.color15:      #c5c8c6
+
+state=${_state:-0}
+
+case $button in
+	1) # Left click
+  new_state=$((_state + 1))
+  ;;
+  2) # Double click
+  ;;
+	3) # Right click
+  new_state=$((_state - 1))
+  ;;
+  4) # Scroll down
+  new_state=$((_state - 10))
+  ;;
+  5) # Scroll up
+  new_state=$((_state + 10))
+  ;;
+  6) # Scroll right
+  ;;
+  7) # Scroll left
+  ;;
+  *) # No click
+  new_state=$((_state))
+esac
+
+# [ -z "$1" ] && exit
+#
+# icon="$2"
+# [ -z "$2" ] && icon="$1"
+# icon=${icon:-"  "}
+
+
+printf '
+  {
+    "full_text":"Counter: %s",
+    "short_text":"C: %s",
+    "color": "#c5c8c6",
+    "background": "#2d2d2d",
+    "border": "#1D1F21",
+    "border_top": 0,
+    "border_right": 0,
+    "border_bottom": 0,
+    "border_left": 0,
+    "min_width": 100,
+    "_state":%d
+  }
+' $state $state $new_state
+
+exit 0
+
+# hour=$(date +"%H")
+# hour=$(date +"%S") # use seconds for testing
+#
+# if [ "$hour" -ge 18 ]; then
+#   # evening
+# 	color="#c5c8c6\n#1D1F21\n"
+# elif [ "$hour" -ge 12 ]; then
+#   # afternoon
+# 	color="#c5c8c6\n#1d1f21\n"
+# elif [ "$hour" -ge 6 ]; then
+#   # morning
+# 	color="#c5c8c6\n#1d1f21\n"
+# else
+#   # nighttime
+# 	color="#c5c8c6\n#1d1f21\n"
+# fi
+#
+# notify() {
+#   pgrep -x dunst >/dev/null && notify-send "$1" "$2"
+# }
+#
+# msg() {
+#   printf "%s: %s\n" "$icon" "$1"
+#   printf "%s: %s\n" "$icon" "$2"
+# }
+#
+# case $BLOCK_BUTTON in
+# 	1) # Left click
+#     notify "$icon Keith Module" "\- Shows something.\n- More info here."
+#     msg "Long button 1 text $hour" "Short button 1 text"
+#     printf $color
+#
+#   ;;
+#   2) # Double click
+#     msg "Long button 2 text $hour" "Short button 2 text"
+#     printf $color
+#
+#   ;;
+# 	3) # Right click
+#     msg "Long right click text $hour" "Short right click text"
+#     printf $color
+#   ;;
+#   4) # Scroll down
+#     msg "Long button 2 text $hour" "Short button 2 text"
+#     printf $color
+#   ;;
+#   5) # Scroll down
+#     msg "Long button 2 text $hour" "Short button 2 text"
+#     printf $color
+#   ;;
+#   6) # Scroll right
+#     msg "Long button 2 text $hour" "Short button 2 text"
+#     printf $color
+#   ;;
+#   7) # Scroll left
+#     msg "Long button 2 text $hour" "Short button 2 text"
+#     printf $color
+#   ;;
+#
+#   *) # No click
+#     msg "Long default text $hour" "Short default text"
+#     printf $color
+# esac

@@ -5,19 +5,21 @@
 # sshfs nas:/share/Video ~/server/video
 # sshfs -o allow_other nas:/share/Video ~/server/video -o uid=1000 -o gid=1000 -o sshfs_debug
 # sshfs -o allow_other nas:/share/Audio ~/server/audio -o uid=1000 -o gid=1000 -o sshfs_debug
-# [ -e ~/server/$@ ] || mkdir ~/server/$@
 
-
+SERVER=nas
 BASE=~/server
+SHARE=$1
+ALIAS=$2
 
-if [ -z "$1" ]; then
-    echo "Usage: `basename $0` sharename"
+if [ -z "$SHARE" ]; then
+    echo "Usage: `basename $0` sharename [alias]"
+    echo "Example: `basename $0` homes/keith home"
+    showmount -e nas
     exit 85
 fi
 
-LOCAL_PATH="$(echo $BASE/$1 | tr '[:upper:]' '[:lower:]'  )"
+LOCAL_PATH="$(echo $BASE/${ALIAS:-$SHARE} | tr '[:upper:]' '[:lower:]' )"
 
-[[ -e  $LOCAL_PATH ]] || mkdir $LOCAL_PATH
-
-sshfs -o follow_symlinks nas:/share/$1/ $LOCAL_PATH
-
+echo "sshfs -o follow_symlinks $SERVER:/share/$SHARE/ $LOCAL_PATH"
+[[ -e  $LOCAL_PATH ]] || mkdir -p $LOCAL_PATH
+sshfs -o follow_symlinks nas:/share/$SHARE/ $LOCAL_PATH
