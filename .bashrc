@@ -72,6 +72,7 @@ pathmunge () {
 [[ -f ~/.asdf/asdf.sh ]] && . ~/.asdf/asdf.sh
 [[ -f ~/.asdf/completions/asdf.bash ]] && . ~/.asdf/completions/asdf.bash
 [[ -f ~/.git-completion.bash ]] && . ~/.git-completion.bash
+source <(kubectl completion bash)
 
 pathmunge $HOME/.local/bin
 # For elixir development

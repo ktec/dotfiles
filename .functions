@@ -31,29 +31,31 @@ find_git_branch() {
   fi
 }
 
+find_elixir_files() {
+    find . \
+        -not \( -path "./deps/*" -prune \) \
+        -not \( -path "./.git/*" -prune \) \
+        -not \( -path "./.elixir_ls/*" -prune \) \
+        -not \( -path "./docker/*" -prune \) \
+        -name '*.ex' -o \
+        -name '*.exs' -o \
+        -name '*.eex'
+}
 
 elixir_test() {
   if [[ $# -eq 0 ]] ; then
-    find . \
-        -not \( -path "./deps/*" -prune \) \
-        -not \( -path "./.git/*" -prune \) \
-        -not \( -path "./.elixir_ls/*" -prune \) \
-        -not \( -path "./docker/*" -prune \) \
-        -name '*.ex' -o \
-        -name '*.exs' -o \
-        -name '*.eex' | \
-        entr mix test
+      find_elixir_files | entr mix test
   else
-    find . \
-        -not \( -path "./deps/*" -prune \) \
-        -not \( -path "./.git/*" -prune \) \
-        -not \( -path "./.elixir_ls/*" -prune \) \
-        -not \( -path "./docker/*" -prune \) \
-        -name '*.ex' -o \
-        -name '*.exs' -o \
-        -name '*.eex' | \
-        entr mix test $@
+      find_elixir_files | entr mix test $@
   fi
+}
+
+elixir_credo() {
+  find_elixir_files | entr mix credo $@
+}
+
+elixir_dialyze() {
+  find_elixir_files | entr mix dialyzer --format dialyxir $@
 }
 
 set_window_title() {

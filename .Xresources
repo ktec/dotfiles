@@ -9,44 +9,44 @@ Xft*autohint: false
 Xft*lcdfilter: lcddefault
 
 !-- Common settings !
+!-- More Themes https://terminal.sexy
 
 ! special
-*.foreground:   #c5c8c6
-*.background:   #1d1f21
-*.cursorColor:  #c5c8c6
+*.foreground:   #93a1a1
+*.background:   #002b36
+*.cursorColor:  #93a1a1
 
 ! black
-*.color0:       #282a2e
-!*.color8:      #373b41
-*.color8:       #707880
+*.color0:       #002b36
+*.color8:       #657b83
 
 ! red
-*.color1:       #a54242
-*.color9:       #cc6666
+*.color1:       #dc322f
+*.color9:       #dc322f
 
 ! green
-*.color2:       #8c9440
-*.color10:      #b5bd68
+*.color2:       #859900
+*.color10:      #859900
 
 ! yellow
-*.color3:       #de935f
-*.color11:      #f0c674
+*.color3:       #b58900
+*.color11:      #b58900
 
 ! blue
-*.color4:       #5f819d
-*.color12:      #81a2be
+*.color4:       #268bd2
+*.color12:      #268bd2
 
 ! magenta
-*.color5:       #85678f
-*.color13:      #b294bb
+*.color5:       #6c71c4
+*.color13:      #6c71c4
 
 ! cyan
-*.color6:       #5e8d87
-*.color14:      #8abeb7
+*.color6:       #2aa198
+*.color14:      #2aa198
 
 ! white
-*.color7:       #707880
-*.color15:      #c5c8c6
+*.color7:       #93a1a1
+*.color15:      #fdf6e3
 
 
 !-- Xterm settings !
@@ -57,15 +57,20 @@ XTerm*saveLines:            32767
 
 !-- URxvt settings !
 
-urxvt*background:           rgba:0000/0000/0000/cccc
-URxvt*transparent:          true
+!*secondary:  #5E6386
+!*active:     #C0C7D4
+!*fading: 20
+!*fadeColor: nord3
+
+! URxvt*background:           rgba:0000/0000/0000/cccc
+! URxvt*transparent:          true
 URxvt*shading:              20
 URxvt*depth:                32
-URxvt*externalBorder:       0
-URxvt*internalBorder:       1
-URxvt*borderLess:           false
-!URxvt*url-select.launcher:  /usr/bin/slimjet-browser -new-tab
-!URxvt*url-select.underline: true
+! URxvt*externalBorder:       0
+! URxvt*internalBorder:       1
+! URxvt*borderLess:           false
+URxvt*colorUL:  yellow
+! URxvt*underlineColor:  yellow
 
 /* URxvt*keysym.C-M-c:     perl:clipboard:copy; */
 /* URxvt*keysym.C-M-v:     perl:clipboard:paste; */
@@ -75,12 +80,25 @@ URxvt*font: xft:Dejavu Sans Mono:size=9,xft:Font Awesome 5 Free:size=8,xft:Incon
 URxvt*letterSpace: -1
 URxvt*saveLines: 1000000
 
+/* Additional settings */
+! URxvt*font:  -xos4-terminus-medium-*-*-*-14-*-*-*-*-*-iso8859-15,xft:terminus:pixelsize:12 */
+! URxvt*boldFont:  -xos4-terminus-bold-*-*-*-14-*-*-*-*-*-iso8859-15,xft:terminus:bold:pixelsize:12 */
+! URxvt*italicFont:  xft:Bitstream Vera Sans Mono:italic:autohint=true:pixelsize=12 */
+! URxvt*boldItalicFont:  xft:Bitstream Vera Sans Mono:bold:italic:autohint=true:pixelsize=12 */
+! URxvt*loginShell:  true */
+! URxvt*scrollTtyKeypress:  true */
+
+
 !-- Perl extensions !
 URxvt*perl-ext-common: default,clipboard,matcher,font-size,url-select,keyboard-select
 URxvt*url-launcher: /usr/bin/xdg-open
-URxvt*url-select.launcher:	/usr/bin/slimjet-browser
+URxvt*url-select.launcher:  /usr/bin/slimjet-browser -new-tab
 URxvt*url-select.underline: true
 URxvt*matcher.button: 1
+
+! -- Search scrollback buffer
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
+URxvt.keysym.M-s: perl:keyboard-select:search
 
 !-- Change background/foreground colours !
 URxvt*keysym.C-7: command:\033]11;#ffffff\007\033]10;black\007
@@ -98,17 +116,17 @@ URxvt*keysym.C-slash:  font-size:show
 
 URxvt*iso14755: false
 URxvt*iso14755_52: false
-/* URxvt*keysym.Shift-Alt-V: eval:paste_clipboard */
-/* URxvt*keysym.Shift-Alt-C: eval:selection_to_clipboard */
+! URxvt*keysym.Shift-Alt-V: eval:paste_clipboard */
+! URxvt*keysym.Shift-Alt-C: eval:selection_to_clipboard */
 
 
-/* URxvt*scrollBar: false */
-/* URxvt*scrollBar:            false */
-/* URxvt*scrollTtyKeypress:    true */
-/* URxvt*scrollTtyOutput:      false */
-/* URxvt*scrollWithBuffer:     false */
-/* URxvt*scrollstyle:          plain */
-/* URxvt*secondaryScroll:      true */
+! URxvt*scrollBar: false */
+! URxvt*scrollBar:            false */
+! URxvt*scrollTtyKeypress:    true */
+! URxvt*scrollTtyOutput:      false */
+! URxvt*scrollWithBuffer:     false */
+! URxvt*scrollstyle:          plain */
+! URxvt*secondaryScroll:      true */
 
 ! enable scrollbar
 URxvt*scrollBar:          true

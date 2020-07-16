@@ -38,6 +38,8 @@ alias vi=vim
 alias a=atom
 alias which='type -a'
 alias et=elixir_test
+alias ed=elixir_dialyze
+alias ec=elixir_credo
 # http://www.commandlinefu.com/commands/view/3555/find-duplicate-files-based-on-size-first-then-md5-hash
 alias watch_elixir="find . -name '*.ex' -o -name '*.exs' | entr mix test"
 
@@ -59,6 +61,12 @@ alias ld='ls -ld'
 alias ll='ls -l'
 alias lt='ls -At1 && echo "------Oldest--"'
 alias ltr='ls -Art1 && echo "------Newest--"'
+
+#--------------------------------------------------------------
+#  Mix
+#--------------------------------------------------------------
+
+alias deps="mix deps.get"
 
 #--------------------------------------------------------------
 #  Git
@@ -347,3 +355,10 @@ alias gwX='git rm -rf'
 
 alias dci='docker rmi -f $(docker images --filter "dangling=true" -q --no-trunc)'
 alias dc='docker rm $(docker ps -qa --no-trunc --filter "status=exited")'
+
+#--------------------------------------------------------------
+# Kubernetes 
+#--------------------------------------------------------------
+
+alias k=kubectl
+complete -F __start_kubectl k
