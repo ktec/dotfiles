@@ -45,8 +45,9 @@
 !.inputrc
 !.local
 .local/*
-.local/bin/*
 !.local/bin/
+.local/bin/*
+.local/bin/i3blocks
 !.pryrc
 !.railsrc
 !.tmux.conf
