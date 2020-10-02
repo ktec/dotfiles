@@ -72,10 +72,7 @@ URxvt*depth:                32
 URxvt*colorUL:  yellow
 ! URxvt*underlineColor:  yellow
 
-/* URxvt*keysym.C-M-c:     perl:clipboard:copy; */
-/* URxvt*keysym.C-M-v:     perl:clipboard:paste; */
-URxvt*keysym.Control-Meta-V: eval:paste_clipboard
-URxvt*keysym.Control-Meta-C: eval:selection_to_clipboard
+
 URxvt*font: xft:Dejavu Sans Mono:size=9,xft:Font Awesome 5 Free:size=8,xft:Inconsolata\ for\ Powerline:pixelsize=22
 URxvt*letterSpace: -1
 URxvt*saveLines: 1000000
@@ -113,20 +110,30 @@ URxvt*keysym.C-S-Up:   font-size:incglobal
 URxvt*keysym.C-S-Down: font-size:decglobal
 URxvt*keysym.C-equal:  font-size:reset
 URxvt*keysym.C-slash:  font-size:show
+! Disable ISO 14755 unicode input so we can use Ctrl-Shift bindings
+URxvt.iso14755:     false
+URxvt.iso14755_52:  false
 
-URxvt*iso14755: false
-URxvt*iso14755_52: false
-! URxvt*keysym.Shift-Alt-V: eval:paste_clipboard */
-! URxvt*keysym.Shift-Alt-C: eval:selection_to_clipboard */
+! Disable Ctrl-Alt-c & Ctrl-Alt-v bindings (optional)
+URxvt.keysym.C-M-c:     builtin-string:
+URxvt.keysym.C-M-v:     builtin-string:
 
+! Bing Ctrl-Shift-C & Ctrl-Shift-V to copy and paste
+URxvt*keysym.C-S-V: eval:paste_clipboard
+URxvt*keysym.C-S-C: eval:selection_to_clipboard
+
+! URxvt*keysym.Shift-Alt-V: eval:paste_clipboard
+! URxvt*keysym.Shift-Alt-C: eval:selection_to_clipboard
+! URxvt*keysym.C-M-c:     perl:clipboard:copy;
+! URxvt*keysym.C-M-v:     perl:clipboard:paste;
 
 ! URxvt*scrollBar: false */
-! URxvt*scrollBar:            false */
-! URxvt*scrollTtyKeypress:    true */
-! URxvt*scrollTtyOutput:      false */
-! URxvt*scrollWithBuffer:     false */
-! URxvt*scrollstyle:          plain */
-! URxvt*secondaryScroll:      true */
+! URxvt*scrollBar:            false
+! URxvt*scrollTtyKeypress:    true
+! URxvt*scrollTtyOutput:      false
+! URxvt*scrollWithBuffer:     false
+! URxvt*scrollstyle:          plain
+! URxvt*secondaryScroll:      true
 
 ! enable scrollbar
 URxvt*scrollBar:          true
