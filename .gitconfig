@@ -2,6 +2,7 @@
 	name = Keith Salisbury
   useConfigOnly = true
 	signingkey = DDD3C151B7F3BD83
+	email = keithsalisbury@gmail.com
 
 [core]
   editor = vim
