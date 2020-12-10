@@ -100,3 +100,9 @@ disk "/home" {
   low_threshold = 5
   format_below_threshold = "Warning: %percentage_avail"
 }
+
+disk "/var" {
+  format = " /var %avail"
+  low_threshold = 5
+  format_below_threshold = "Warning: %percentage_avail"
+}
