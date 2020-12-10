@@ -1,3 +1,5 @@
+#!/bin/sh
+
 # Adjust keyboard typematic delay and rate
 xset r rate 250 60
 
@@ -12,6 +14,7 @@ xrandr --auto
 [[ -f ~/.Xmodmap ]] && xmodmap ~/.Xmodmap
 
 # https://bugs.archlinux.org/task/46374
+# shellcheck source=/etc/X11/xinit/xinitrc.d/50-systemd-user.sh
 source /etc/X11/xinit/xinitrc.d/50-systemd-user.sh
 
 # Let QT and GTK autodetect retina screen and autoadjust
