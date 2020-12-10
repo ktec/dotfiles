@@ -2,9 +2,10 @@
 
 # SOURCE=`find /usr/share/wallpapers/ -type f | shuf -n1`
 # SOURCE=`find ~/Pictures/ -type f -name *.jpg | shuf -n1`
-SOURCE=`find ~/Pictures/Wallpapers -type f -name *.jpg | shuf -n1`
+SOURCE=`find ~/Pictures/Wallpapers | shuf -n1`
 LINK=~/.local/share/wallpaper.jpg
 
 [[ -L $LINK ]] && rm -f "$LINK"
 ln -s "$SOURCE" "$LINK"
-feh --bg-max --auto-rotate "$LINK"
+feh --bg-scale --auto-rotate "$LINK"
+
