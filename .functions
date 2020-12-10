@@ -37,6 +37,7 @@ find_elixir_files() {
         -not \( -path "./.git/*" -prune \) \
         -not \( -path "./.elixir_ls/*" -prune \) \
         -not \( -path "./docker/*" -prune \) \
+        -not \( -path "*node_modules*" -prune \) \
         -name '*.ex' -o \
         -name '*.exs' -o \
         -name '*.eex'
