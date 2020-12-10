@@ -15,8 +15,10 @@
 
 export EDITOR='vim'
 export VISUAL="vim"
+export TERMINAL="alacritty"
 export ERL_AFLAGS="-kernel shell_history enabled"
 export GDK_SCALE=2
+
 
 # HISTORY
 # don't put duplicate lines in the history. See bash(1) for more options
