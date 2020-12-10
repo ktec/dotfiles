@@ -24,9 +24,10 @@
 !.commitmessage
 !.config/
 .config/*
-!.config/mpd/
+!.config/mpd/mpd.conf
 !.config/gtk-3.0/
 !.config/i3/
+!.config/i3/compton.conf
 !.config/i3status/
 !.config/dunst/
 !.config/mpd/
