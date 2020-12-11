@@ -29,6 +29,7 @@
 !.config/i3/
 !.config/i3/compton.conf
 !.config/i3status/
+!.config/i3blocks/
 !.config/dunst/
 !.config/mpd/
 !.config/mpd/playlists/
