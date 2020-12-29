@@ -1,0 +1,97 @@
+
+mpd_music_dir = "~/Downloads/Music"  
+lyrics_directory  = ~/.ncmpcpp/lyrics
+ncmpcpp_directory  = ~/.ncmpcpp
+mpd_host = "localhost"
+mpd_port = "6600"  
+mpd_connection_timeout = "5"  
+mpd_crossfade_time = "5" 
+fetch_lyrics_for_current_song_in_background = "yes"
+startup_slave_screen = "visualizer"
+clock_display_seconds = "yes"
+jump_to_now_playing_song_at_start = "yes"
+display_volume_level = "yes"
+display_bitrate = "yes"
+display_remainining_time = "yes"
+playlist_disable_highlight_delay = "0"  
+playlist_display_mode = "columns"  
+playlist_show_remaining_time = "yes"
+
+browser_display_mode = "columns"  
+autocenter_mode = "yes"  
+fancy_scrolling = "yes"  
+follow_now_playing_lyrics = "yes"  
+display_screens_numbers_on_start = "yes"  
+ignore_leading_the = "yes"  
+lyrics_database = "1" 
+
+display_bitrate = "yes"
+follow_now_playing_lyrics = "yes"
+ignore_leading_the = "yes"
+empty_tag_marker = "" Playlist
+playlist_disable_highlight_delay = "0"  
+playlist_display_mode = "columns"  
+playlist_show_remaining_time = "yes"
+
+browser_display_mode = "columns"  
+autocenter_mode = "yes"  
+fancy_scrolling = "yes"  
+follow_now_playing_lyrics = "yes"  
+display_screens_numbers_on_start = "yes"  
+ignore_leading_the = "yes"  
+lyrics_database = "1"  
+#user_interface =                    "classic"
+#default_place_to_search_in = "database"
+#
+#
+#cyclic_scrolling = "yes"
+#header_text_scrolling = "yes"
+#jump_to_now_playing_song_at_start = "yes"
+#lines_scrolled = "2"
+#
+#system_encoding = "utf-8"
+#regular_expressions = "extended"
+#
+#
+#
+#selected_item_prefix = "* "
+#discard_colors_if_item_is_selected = "no"
+#
+#incremental_seeking = "yes"
+#seek_time = "1"
+#[global]
+#colors_enabled = yes
+#main_window_color = default
+#centered_cursor = yes
+#enable_window_title = yes
+#external_editor = vim
+#[visualizer]
+#visualizer_fifo_path = /tmp/mpd.fifo
+#visualizer_in_stereo = no
+#visualizer_type = spectrum
+#visualizer_look = ●┃
+#visualizer_color = cyan, green, yellow, magenta, red
+#
+#[header]
+#header_visibility = no
+#header_window_color = default
+#playlist_shorten_total_times = yes
+#volume_color = default
+#state_line_color = black
+#
+#[playlist]
+#playlist_display_mode = classic
+#song_list_format = "{{%a - %t}|{%f}}{$R%l}"
+#now_playing_prefix = "$b$5"
+#now_playing_suffix = "$/b$9"
+#
+#
+#[library]
+#song_library_format = "{{%a - %t}|{%f}}{$R%l}"
+#empty_tag_color = black
+#progressbar_look =  "=>-"
+#progressbar_boldness = "yes"
+#progressbar_elapsed_color = "white"
+#
+# allow_for_physical_item_deletion = yes
+# execute_on_song_change = notify-send "Now Playing ♫" "$(mpc current)"
