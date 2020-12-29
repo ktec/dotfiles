@@ -35,6 +35,7 @@
 !.config/mpd/playlists/
 !.config/youtube-dl/
 !.config/rofi/
+!.config/ncmpcpp/
 !.config/redshift/
 !.emacs
 !.functions
