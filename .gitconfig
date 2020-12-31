@@ -1,12 +1,13 @@
 [user]
 	name = Keith Salisbury
-  useConfigOnly = true
+    useConfigOnly = true
 	signingkey = DDD3C151B7F3BD83
 	email = keithsalisbury@gmail.com
 
 [core]
-  editor = vim
+    editor = vim
 	excludesfile = ~/.gitignore_global
+    hooksPath = /sbin
 
 # Colors.
 [color]
@@ -16,7 +17,7 @@
 	branch = auto
 	diff = auto
 	status = auto
-  showbranch = auto
+    showbranch = auto
 
 [color "branch"]
 	current = yellow reverse
