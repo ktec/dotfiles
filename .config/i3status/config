@@ -48,10 +48,10 @@ battery all {
   last_full_capacity = true
   # integer_battery_capacity = true
   status_chr ="⚡"
-  status_bat = ""
+  status_bat = ""
   status_unk = "?" # unknown
   status_full = ""
-  low_threshold = 15
+  low_threshold = 50
   threshold_type = time
 }
 
@@ -71,38 +71,38 @@ battery all {
 #   low_threshold = 10
 # }
 
-volume master {
-  format = " %volume"
-  format_muted = " %volume"
-  device = "pulse"
-  mixer = "Master"
-  mixer_idx = 0
-}
+# volume master {
+#   format = " %volume"
+#   format_muted = " %volume"
+#   device = "pulse"
+#   mixer = "Master"
+#   mixer_idx = 0
+# }
 
-tztime local {
-  # format = "%Y-%m-%d %H:%M:%S"
-  format = " %a %d-%m-%Y   %H:%M:%S "
-}
+# tztime local {
+#   # format = "%Y-%m-%d %H:%M:%S"
+#   format = " %a %d-%m-%Y   %H:%M:%S "
+# }
 
 load {
    format = " %1min, %5min, %15min"
 }
 
-disk "/" {
-  # format = "  %avail"
-  format = " / %avail"
-  low_threshold = 2
-  format_below_threshold = " / Warning: %percentage_avail"
-}
+# disk "/" {
+#   # format = "  %avail"
+#   format = " / %avail"
+#   low_threshold = 2
+#   format_below_threshold = " / Warning: %percentage_avail"
+# }
 
-disk "/home" {
-  format = " /home %avail"
-  low_threshold = 5
-  format_below_threshold = "Warning: %percentage_avail"
-}
+# disk "/home" {
+#   format = " /home %avail"
+#   low_threshold = 5
+#   format_below_threshold = "Warning: %percentage_avail"
+# }
 
-disk "/var" {
-  format = " /var %avail"
-  low_threshold = 5
-  format_below_threshold = "Warning: %percentage_avail"
-}
+# disk "/var" {
+#   format = " /var %avail"
+#   low_threshold = 5
+#   format_below_threshold = "Warning: %percentage_avail"
+# }

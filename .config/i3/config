@@ -259,28 +259,45 @@ client.urgent               $urgent_bg_colour       $urgent_bg_colour       $tex
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-    # font pango:DejaVu Sans Mono, FontAwesome 9
-    position top
-    status_command i3status
-#   status_command 2>/tmp/i3blocks.err i3blocks -vvv -c ~/.config/i3blocks/config | tee /tmp/i3blocks.out
-}
+# bar {
+#     #font pango: DejaVu Sans Mono 11
+#     font pango: DejaVu Sans Mono Nerd Font 9
+#     # font xft: DejaVu Sans Mono 11, FontAwesome 9
+#     position top
+#     status_command i3status
+# #   status_command 2>/tmp/i3blocks.err i3blocks -vvv -c ~/.config/i3blocks/config | tee /tmp/i3blocks.out
+# }
 
 # i3blocks bar
+bar {
+    font pango: DejaVu Sans Mono Nerd Font 9
+    position top
+    status_command i3blocks
+    # status_command 2>/tmp/i3blocks.err i3blocks -vvv -c ~/.config/i3blocks/config | tee /tmp/i3blocks.out
+
+    colors {
+      # separator #515151
+      background #2d2d2d
+      statusline #cccccc
+      # focused_workspace #99cc99 #99cc99 #000000
+      # active_workspace #333333 #333333 #99cc99
+      # inactive_workspace #2d2d2d #2d2d2d #999999
+      # urgent_workspace #f2777a #f2777a #ffffff
+    }
+}
+
 # bar {
-#     font pango:DejaVu Sans Mono, FontAwesome 9
-#     position bottom
-#     # status_command i3blocks
-#     status_command 2>/tmp/i3blocks.err i3blocks -vvv -c ~/.config/i3blocks/config | tee /tmp/i3blocks.out
-# 
+#     font pango: DejaVu Sans Mono Nerd Font 9, FontAwesome 11
+#     position top
+#     status_command i3status-rs ~/.config/i3status-rust/config.toml
 #     colors {
-#       # separator #515151
-#       background #2d2d2d
-#       statusline #cccccc
-#       # focused_workspace #99cc99 #99cc99 #000000
-#       # active_workspace #333333 #333333 #99cc99
-#       # inactive_workspace #2d2d2d #2d2d2d #999999
-#       # urgent_workspace #f2777a #f2777a #ffffff
+#         separator #666666
+#         background #222222
+#         statusline #dddddd
+#         focused_workspace #0088CC #0088CC #ffffff
+#         active_workspace #333333 #333333 #ffffff
+#         inactive_workspace #333333 #333333 #888888
+#         urgent_workspace #2f343a #900000 #ffffff
 #     }
 # }
 

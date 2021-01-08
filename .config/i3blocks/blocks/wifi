@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+device="${INTERFACE}"
+status=$(cat /sys/class/net/${device}/operstate)
+
+URGENT_VALUE=20
+
+if [[ "${status}" == "up" ]]; then
+    if [[ -d "/sys/class/net/${device}/wireless" ]]; then
+        ip=$(nmcli -g DHCP4 connection show "CleverBunny_EE" | sed -E "s/(^|.*|)ip_address = ([^|]*).*/\2/")
+        quality=$(nmcli --mode tabular --escape yes --field SSID,FREQ,CHAN,SIGNAL,RATE,BARS,ACTIVE device wifi | grep yes | awk '{ print $5"% at "$1" "$2$3" ch:"$4" "$6$7 }')
+        echo "${quality}"
+        echo "${quality}"
+        echo ""
+
+        if [[ "${quality}" -le "${URGENT_VALUE}" ]]; then
+            exit 33
+        fi
+    else
+        echo "on"
+        echo "on"
+        echo ""
+    fi
+fi

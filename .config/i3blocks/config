@@ -6,27 +6,58 @@ markup=pango
 #interval=5
 #signal=5
 
-[backlight]
-interval=once
-signal=10
+#[backlight]
+#interval=once
+#signal=10
 
-[volume]
-interval=once
-signal=10
-min_width=25
-align=right
+#[memory]
+#interval=10
 
-[cpu]
-interval=5
+#[disk]
+#interval=60
 
-[memory]
-interval=10
+[wifi]
+label=  
+INTERFACE=wlp3s0
+interval=1
 
-[disk]
-interval=60
+[eth]
+label= 
+INTERFACE=ens9
+interval=1
 
 [battery]
 interval=5
 
+[cpu]
+label=
+interval=-2
+#report_time=5
+stats=usr nice sys iowait
+#format=%6.2f
+#format=﬙
+warn=80
+usr_color=white
+nice_color=white
+sys_color=white
+iowait_color=white
+#irq_color=purple
+#soft_color=violet
+#steal_color=orange
+#guest_color=cyan
+#gnice_color=blue
+#idle_color=white
+#total_color=white
+min_width=⣾⣄ 100.00%
+
+[volume]
+label= 
+interval=1
+#interval=once
+signal=10
+#min_width=25
+#align=right
+
 [clock]
 interval=1
+

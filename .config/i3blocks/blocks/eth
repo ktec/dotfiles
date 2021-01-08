@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+device="${INTERFACE:ens9}"
+status=$(cat /sys/class/net/${device}/operstate)
+
+if [[ "${status}" == "up" ]]; then
+  quality=$(nmcli -g DHCP4 device show ens9 | sed -E "s/(^|.*|)ip_address = ([^|]*).*/\2/" | tr -d '[:space:]')
+  echo "${quality}"
+  echo "${quality}"
+  echo ""
+fi
