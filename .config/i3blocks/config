@@ -2,17 +2,6 @@ command=~/.config/i3blocks/blocks/$BLOCK_NAME
 separator_block_width=30
 markup=pango
 
-#[weather]
-#interval=5
-#signal=5
-
-#[backlight]
-#interval=once
-#signal=10
-
-#[memory]
-#interval=10
-
 #[disk]
 #interval=60
 

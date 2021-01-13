@@ -79,4 +79,4 @@ discharging)
 *) cond="❗Unidentified battery status, check acpi" ;;
 esac
 
-echo "<span color=\"${color}\">$cond  ${capacity}%</span>${remaining}"
+echo "<span color=\"${color}\">$cond ${capacity}%</span>${remaining}"
