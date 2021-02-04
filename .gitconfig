@@ -87,3 +87,7 @@
 
 [credential]
 	helper = /usr/lib/git-core/git-credential-libsecret
+[url "https://esl"]
+	insteadOf = https://github.com/esl
+[init]
+	defaultBranch = main
