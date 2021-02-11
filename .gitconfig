@@ -1,15 +1,14 @@
 [user]
 	name = Keith Salisbury
-    useConfigOnly = true
+	useConfigOnly = true
 	signingkey = DDD3C151B7F3BD83
 	email = keithsalisbury@gmail.com
 
 [core]
-    editor = vim
+	editor = vim
 	excludesfile = ~/.gitignore_global
-    hooksPath = /sbin
+	hooksPath = /sbin
 
-# Colors.
 [color]
 	interactive = auto
 	ui = auto
@@ -17,7 +16,7 @@
 	branch = auto
 	diff = auto
 	status = auto
-    showbranch = auto
+	showbranch = auto
 
 [color "branch"]
 	current = yellow reverse
@@ -38,8 +37,8 @@
 	log = true
 [push]
 	# default = current
-    # default = matching
-    default = current
+	# default = matching
+	default = current
 [pull]
 	rebase = true
 [rebase]
@@ -47,10 +46,10 @@
 
 [alias]
 	co = checkout
-    cp = cherry-pick
+	cp = cherry-pick
 	br = branch -v
 	ci = commit
-    s  = status
+	s  = status
 	st = status
 	a  = add -p
 	i  = add -i
@@ -61,7 +60,7 @@
 	ll = log -p
 	lt = log trunk
 	graph = log --graph --oneline --decorate=short --branches='*'
-    graphall = log --all --graph --oneline --decorate
+	graphall = log --all --graph --oneline --decorate
 	recent = for-each-ref --sort=-committerdate refs/heads/ --count=20 --format='%(HEAD)%(objectname:short) %(color:yellow)%(refname:short)%(color:reset) - %(color:green)%(committerdate:relative)%(color:reset)'
 	brx = for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'
 	df = diff --color-words='[^[:space:]]'
@@ -87,7 +86,9 @@
 
 [credential]
 	helper = /usr/lib/git-core/git-credential-libsecret
-[url "https://esl"]
+
+[url "esl-github:esl"]
 	insteadOf = https://github.com/esl
+
 [init]
 	defaultBranch = main
