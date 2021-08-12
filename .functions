@@ -43,12 +43,16 @@ find_elixir_files() {
         -name '*.eex'
 }
 
+# elixir_test() {
+#   if [[ $# -eq 0 ]] ; then
+#       find_elixir_files | entr mix test
+#   else
+#       find_elixir_files | entr mix test $@
+#   fi
+# }
+
 elixir_test() {
-  if [[ $# -eq 0 ]] ; then
-      find_elixir_files | entr mix test
-  else
-      find_elixir_files | entr mix test $@
-  fi
+  find_elixir_files | entr mix test $@
 }
 
 elixir_credo() {
