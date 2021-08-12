@@ -90,5 +90,15 @@
 [url "esl-github:esl"]
 	insteadOf = https://github.com/esl
 
+[url "esl-github:esl"]
+	insteadOf = git@github.com:esl
+
+[url "bet01-github"]
+	insteadOf = git@github.com:bet01
+
+[url "git@github.com:bet01"]
+	insteadOf = bet01-github:bet01
+	
+
 [init]
 	defaultBranch = main
