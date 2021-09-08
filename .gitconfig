@@ -96,6 +96,9 @@
 [url "zola-github:OffgridElectric"]
         insteadOf = https://github.com/OffgridElectric
 
+[url "zola-github:OffgridElectric"]
+        insteadOf = git@github.com:OffgridElectric
+
 [url "bet01-github"]
         insteadOf = git@github.com:bet01
 
