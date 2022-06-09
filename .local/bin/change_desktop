@@ -2,7 +2,8 @@
 
 # SOURCE=`find /usr/share/wallpapers/ -type f | shuf -n1`
 # SOURCE=`find ~/Pictures/ -type f -name *.jpg | shuf -n1`
-SOURCE=`find ~/Pictures/Wallpapers | shuf -n1`
+# SOURCE=`find ~/Pictures/Wallpapers | shuf -n1`
+SOURCE=`find ~/Pictures/2021/Phone | shuf -n1`
 LINK=~/.local/share/wallpaper.jpg
 
 [[ -L $LINK ]] && rm -f "$LINK"

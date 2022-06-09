@@ -362,3 +362,10 @@ alias dc='docker rm $(docker ps -qa --no-trunc --filter "status=exited")'
 
 alias k=kubectl
 complete -F __start_kubectl k
+
+#--------------------------
+# Monitors
+#--------------------------
+
+alias default='~/.screenlayout/default.sh'
+alias dp1='~/.screenlayout/dp1.sh'

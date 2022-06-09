@@ -85,6 +85,7 @@ pathmunge $HOME/.cargo/bin/
 #pathmunge $HOME/.cache/rebar3/bin
 pathmunge $HOME/.asdf/installs/elixir/1.9.4-otp-22/.mix/escripts
 #pathmunge $HOME/.asdf/installs/elixir/1.11.2-otp-23/.mix/
+#pathmunge $HOME/.nix-profile/bin
 
 #source ~/.asdf/installs/rust/1.33.0/env
 

@@ -10,15 +10,15 @@ if [[ "${status}" == "up" ]]; then
         ip=$(nmcli -g DHCP4 connection show "CleverBunny_EE" | sed -E "s/(^|.*|)ip_address = ([^|]*).*/\2/")
         quality=$(nmcli --mode tabular --escape yes --field SSID,FREQ,CHAN,SIGNAL,RATE,BARS,ACTIVE device wifi | grep yes | awk '{ print $5"% at "$1" "$2$3" ch:"$4" "$6$7 }')
         echo "${quality}"
-        echo "${quality}"
+	echo "${ip}"
         echo ""
 
-        if [[ "${quality}" -le "${URGENT_VALUE}" ]]; then
-            exit 33
-        fi
-    else
+ #      if [[ "${quality}" -le "${URGENT_VALUE}" ]]; then
+ #         exit 33
+  #    fi
+  else
         echo "on"
         echo "on"
         echo ""
-    fi
+  fi
 fi
