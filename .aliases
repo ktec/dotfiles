@@ -369,3 +369,4 @@ complete -F __start_kubectl k
 
 alias default='~/.screenlayout/default.sh'
 alias dp1='~/.screenlayout/dp1.sh'
+alias dp2='~/.screenlayout/dp2.sh'
