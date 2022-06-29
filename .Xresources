@@ -1,7 +1,7 @@
 !-- Xft settings !
 !-- Using `xdpyinfo | grep -B 2 resolution` u can find res for ur monitor
 !Xft*dpi: 220
-Xft*dpi: 190
+Xft*dpi: 260
 Xft*antialias: true
 Xft*hinting: true
 Xft*hintstyle: hintslight
@@ -51,7 +51,10 @@ Xft*lcdfilter: lcddefault
 
 !-- Xterm settings !
 
-Xterm*font: *-Terminus-*-*-*-27-*,xft:Font Awesome 5 Free:size=12
+!Xterm*font: *-Terminus-*-*-*-27-*,xft:Font Awesome 5 Free:size=12
+!Xterm*font: *-Terminus-*-*-*-52-*,xft:Font Awesome 5 Free:size=12
+xterm*faceName: Monospace
+xterm*faceSize: 18
 XTerm*utf8: 2
 XTerm*saveLines:            32767
 

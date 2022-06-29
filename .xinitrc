@@ -44,3 +44,6 @@ setxkbmap -layout gb
 exec i3
 # If you need to debug i3, uncomment this:
 # exec i3 -V >> ~/.i3/i3log 2>&1
+# dwmstatus 2>&1 >/dev/null &
+# exec slstatus &
+# exec dwm
