@@ -67,3 +67,17 @@ set_window_title() {
     printf -v title '%s' "$*"
     trap 'echo -ne "\e]0;${title}\007"' DEBUG
 }
+
+# use ~/.local/share/pandoc/defaults/pdf.yaml by default
+pandoc() { command pandoc --defaults pdf "$@"; }
+
+# Append "$1" to $PATH when not already in.
+# This function API is accessible to scripts in /etc/profile.d
+append_path () {
+    case ":$PATH:" in
+        *:"$1":*)
+            ;;
+        *)
+            PATH="${PATH:+$PATH:}$1"
+    esac
+}
