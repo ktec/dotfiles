@@ -18,7 +18,7 @@ export VISUAL="vim"
 export TERMINAL="alacritty"
 export ERL_AFLAGS="-kernel shell_history enabled"
 export GDK_SCALE=2
-
+export KERL_BUILD_DOCS=yes
 
 # HISTORY
 # don't put duplicate lines in the history. See bash(1) for more options
@@ -71,8 +71,12 @@ pathmunge () {
 }
 
 # asdf provides multiple versions of elixir, ruby, haskell, elm, etc
-[[ -f ~/.asdf/asdf.sh ]] && . ~/.asdf/asdf.sh
-[[ -f ~/.asdf/completions/asdf.bash ]] && . ~/.asdf/completions/asdf.bash
+# [[ -f ~/.asdf/asdf.sh ]] && . ~/.asdf/asdf.sh
+# [[ -f ~/.asdf/completions/asdf.bash ]] && . ~/.asdf/completions/asdf.bash
+
+# activate mise
+eval "$(mise activate bash)"
+
 [[ -f ~/.git-completion.bash ]] && . ~/.git-completion.bash
 source <(kubectl completion bash)
 
@@ -89,35 +93,12 @@ pathmunge $HOME/.asdf/installs/elixir/1.9.4-otp-22/.mix/escripts
 
 #source ~/.asdf/installs/rust/1.33.0/env
 
-# SSH
-# Keychain - not sure this is the best approach...
-eval `keychain --eval --nogui --noask -q --agents ssh id_*`
-# Some useful info here: https://wiki.archlinux.org/index.php/GNOME/Keyring
-# I have implemented suggested update "Using the keyring outside GNOME"
-# "PAM method" which updates /etc/pam.d/login
-# if [ -z "$SSH_AUTH_SOCK" ]; then
-#     eval $(ssh-agent)
-#     ssh-add
-# fi
-# Change the window title of X terminals
-# if [[ $TERM =~ "xterm|*rxvt*" ]]; then
-#   # set -o functrace
-#   trap 'set_title' DEBUG
-# fi
-
-# add GPG key to bash profile
+# So GPG knows which terminal to use
 export GPG_TTY=$(tty)
 
-# Build erlang docs
-export KERL_BUILD_DOCS=yes
+# direnv
+eval "$(direnv hook bash)"
 
-# Enable delete in Atom editor
-export ELECTRON_TRASH=gio
-
-# Start ssh-agent automatically and ensure only one process
-if ! pgrep -u "$USER" ssh-agent > /dev/null; then
-    ssh-agent > ~/.ssh-agent-lock
-fi
-if [[ ! "$SSH_AUTH_SOCK" ]]; then
-    eval "$(<~/.ssh-agent-lock)"
-fi
+# Disable software control flow so we can use Ctrl-S in search
+# (can be enabled again using `stty -ixon`
+stty -ixon
