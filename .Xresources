@@ -1,7 +1,6 @@
 !-- Xft settings !
 !-- Using `xdpyinfo | grep -B 2 resolution` u can find res for ur monitor
-!Xft*dpi: 220
-Xft*dpi: 260
+Xft*dpi: 96
 Xft*antialias: true
 Xft*hinting: true
 Xft*hintstyle: hintslight
