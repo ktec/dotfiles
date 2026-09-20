@@ -17,7 +17,6 @@ export EDITOR='vim'
 export VISUAL="vim"
 export TERMINAL="alacritty"
 export ERL_AFLAGS="-kernel shell_history enabled"
-export GDK_SCALE=2
 export KERL_BUILD_DOCS=yes
 
 # HISTORY
