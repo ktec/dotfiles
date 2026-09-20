@@ -1,6 +1,6 @@
 configuration {
   modi: "window,drun,ssh,combi";
-  font: "hack 28";
+  font: "hack 14";
   show: "combi,icons";
   show-icons: true;
   icon-theme: "Papirus";
@@ -154,7 +154,7 @@ configuration {
 
 configuration {
 	modi: "window,drun,ssh,combi";
-	font: "hack 22";
+	font: "hack 14";
 	icon-theme: "Papirus";
 }
 
