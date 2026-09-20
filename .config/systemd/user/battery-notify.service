@@ -1,0 +1,7 @@
+[Unit]
+Description=Warn when the battery runs low
+Documentation=man:dunstify(1)
+
+[Service]
+Type=oneshot
+ExecStart=%h/bin/battery-notify.sh

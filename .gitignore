@@ -57,3 +57,19 @@
 !.xbindkeysrc
 !.xinitrc
 !.Xmodmap
+
+# dwm-era: scripts in ~/bin (note: ~/.bin never existed on this machine)
+!bin/
+bin/*
+!bin/battery-gauge.sh
+!bin/battery-notify.sh
+!bin/screenshot.sh
+
+# systemd user units -- named individually so systemd's own
+# *.target.wants/ enable-state symlinks stay out
+!.config/systemd/
+.config/systemd/*
+!.config/systemd/user/
+.config/systemd/user/*
+!.config/systemd/user/battery-notify.service
+!.config/systemd/user/battery-notify.timer
