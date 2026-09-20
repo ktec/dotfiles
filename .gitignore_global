@@ -10,3 +10,16 @@ vendor/ruby
 phx_new*.ez
 .elixir_ls
 .vscode
+
+# Claude Code
+.claude/
+
+# MCP
+.mcp.json
+.mcp-index.sqlite
+
+
+# index_mcp
+
+.ann/
+.mcp-index.sqlite
