@@ -59,3 +59,25 @@ git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 ```
 
 Then open `vim` and type `:VundleInstall`
+
+## Pacman tips
+
+Upgrade system:
+
+`pacman -Syu`
+
+Remove a package:
+
+`pacman -Rn package_name`
+
+List files installed by a package:
+
+`pacman -Ql packagename`
+
+List orphan packages:
+
+`pacman -Qdt`
+
+Check for updated without refreshing local database:
+
+`yay -Qua`
