@@ -1,0 +1,14 @@
+#!/bin/sh
+# Set the DPI for the whole X session: Xft.dpi for Xlib apps (dwm, dmenu,
+# alacritty) and XSETTINGS for GTK and Chromium/Electron, which rescale live.
+# GTK widgets stay at 2x, so GTK's text DPI is halved to match.
+# Called by the autorandr postswitch hooks.
+set -eu
+dpi=${1:?usage: set-dpi DPI}
+echo "Xft.dpi: $dpi" | xrdb -merge
+cat > "${XDG_RUNTIME_DIR:-/run/user/$(id -u)}/xsettingsd.conf" <<CONF
+Gdk/WindowScalingFactor 2
+Gdk/UnscaledDPI $((dpi * 1024 / 2))
+Xft/DPI $((dpi * 1024))
+CONF
+pkill -HUP -u "$(id -u)" -x xsettingsd || true

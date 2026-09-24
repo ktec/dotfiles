@@ -3,13 +3,6 @@
 # Adjust keyboard typematic delay and rate
 xset r rate 250 60
 
-# Start Xorg server at this DPI
-# xrandr --setprovideroutputsource modesetting NVIDIA-0
-# xrandr --auto
-# xrandr --dpi 190
-xrandr --auto
-
-
 # Merge & load configuration from .Xresources
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
 [[ -f ~/.Xmodmap ]] && xmodmap ~/.Xmodmap
@@ -24,12 +17,11 @@ export MOZ_X11_EGL=1
 export MOZ_DISABLE_RDD_SANDBOX=1
 export LIBVA_DRIVER_NAME=iHD
 
-# Let QT and GTK autodetect retina screen and autoadjust
+# Let QT autodetect retina screen and autoadjust
 export QT_AUTO_SCREEN_SCALE_FACTOR=1
-# Scale UI elements
-export GDK_SCALE=2
-# Undo the scaling of text
-export GDK_DPI_SCALE=0.5
+# GTK and Chromium/Electron scaling comes from XSETTINGS, not GDK_SCALE:
+# Chromium multiplies GDK_SCALE with the DPI and ends up double size
+xsettingsd -c "$XDG_RUNTIME_DIR/xsettingsd.conf" &
 
 # Start xbindkeys
 xbindkeys &

@@ -34,6 +34,7 @@
 !.ncmpcpp/
 .ncmpcpp/error*
 !.config/redshift/
+!.config/autorandr/
 !.emacs
 !.functions
 !.gemrc
@@ -47,6 +48,7 @@
 .local/*
 !.local/bin/
 .local/bin/*
+!.local/bin/set-dpi
 !.pryrc
 !.railsrc
 !.tmux.conf
@@ -56,6 +58,7 @@
 !.vimrc.local.bundles
 !.xbindkeysrc
 !.xinitrc
+!.xprofile
 !.Xmodmap
 
 # dwm-era: scripts in ~/bin (note: ~/.bin never existed on this machine)

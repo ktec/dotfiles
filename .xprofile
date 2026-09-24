@@ -1,0 +1,2 @@
+# Pick the docked/mobile layout; its postswitch hook sets the DPI
+autorandr --change --force --default mobile

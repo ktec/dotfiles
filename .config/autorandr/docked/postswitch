@@ -1,0 +1,3 @@
+#!/bin/sh
+# 31.5" 4K monitor, physically ~140 DPI
+exec ~/.local/bin/set-dpi 140
