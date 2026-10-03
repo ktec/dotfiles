@@ -1,15 +1,15 @@
 # Increase Volume
-"amixer -c1 sset Master playback 5%+"
+"wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+"
 m:0x0 + c:123
 XF86AudioRaiseVolume
 
 # Decrease Volume
-"amixer -c1 sset Master playback 5%-"
+"wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
 m:0x0 + c:122
 XF86AudioLowerVolume
 
 # Mute Sound
-"amixer -c1 sset Master toggle"
+"wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
 m:0x0 + c:121
 XF86AudioMute
 
